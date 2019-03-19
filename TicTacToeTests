@@ -1,0 +1,76 @@
+using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using QA_Lab07;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TicTacToeTests
+{
+    [TestClass]
+    public class TicTacToeTests
+    {
+        TicTacToeMethods test = new TicTacToeMethods();
+
+        //Test to check if board has correct amount of spaces
+        [TestMethod()]
+        public void createBoardTest()
+        {
+            int expected = 9;
+            int actual = test.createBoard().Length;
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Checks if player with "X" is current
+        [TestMethod()]
+        public void currentPlayerTestX()
+        {
+            string expected = "playerX";
+            string actual = test.currentPlayer("X");
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        //Checks if player with "O" is current
+        [TestMethod()]
+        public void currentPlayerTestO()
+        {
+            string expected = "playerO";
+            string actual = test.currentPlayer("O");
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        //Checks if player played an "X"
+        [TestMethod()]
+        public void playX()
+        {
+            string expected = "X";
+            string actual = test.makeMove.tictacToe["X"];
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        //Checks of player played an "O"
+        [TestMethod()]
+        public void playO()
+        {
+            string expected = "O";
+            string actual = test.makeMove.tictacToe["O"];
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        //Checks if space already has been used
+        [TestMethod()]
+        public void spaceInUseTest()
+        {
+            bool expected = false;
+            bool actual = test.spaceInUse(1, 1);
+            Assert.AreEqual(expected, actual);
+        }
+
+    }
+}
